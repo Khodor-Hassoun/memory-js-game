@@ -1,0 +1,32 @@
+.card{
+    background-color: aqua;
+}
+
+.cards-container{
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+        "g11 g12 g13"
+        "g21 g22 g23";
+    grid-template-rows: repeat(2,40vh);
+    grid-template-columns: repeat(3,20vw);
+    gap: 10px;
+}
+.cards-container> *:nth-child(1){
+    grid-area: g11;
+}
+.cards-container> *:nth-child(2){
+    grid-area: g12;
+}
+.cards-container> *:nth-child(3){
+    grid-area: g13;
+}
+.cards-container> *:nth-child(4){
+    grid-area: g21;
+}
+.cards-container> *:nth-child(5){
+    grid-area: g22;
+}
+.cards-container> *:nth-child(6){
+    grid-area: g23;
+}
