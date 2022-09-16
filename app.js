@@ -8,19 +8,16 @@ for(let card of cards){
     image.setAttribute('src',`./assets/${Math.floor(Math.random() * 3)+1}.png`)
     card.append(image)
 }
-// for(let card of cards){
-//     card.addEventListener('click', ()=>{
-//         card.classList.add('no-image')
-//     })
+// for (let card of cards) {
+//   card.classList.add("no-image");
 // }
-
-
 
 // Logic. Go inside a div -> img ->src. compare with next click button
 //If true we add a point and run a picture loop
 //If false we hide both images and keep the game going
 for(let card of cards){
     card.addEventListener('click',()=>{
+        card.classList.remove('no-image')
         image = card.childNodes[1].src
         if( firstCard != image){
             firstCard = card.childNodes[1].src
@@ -30,6 +27,7 @@ for(let card of cards){
             console.log('Almost there')
             result.innerHTML=`${wincounter}`
             for(let card of cards){
+                card.classList.add('no-image')
                 card.removeChild(card.childNodes[1])
                 let image = document.createElement('img')
                 image.setAttribute('src',`./assets/${Math.floor(Math.random() * 3)+1}.png`)
