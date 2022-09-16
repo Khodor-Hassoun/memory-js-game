@@ -3,6 +3,7 @@
 }
 img{
     width: 100%;
+    height: 100%;
 }
 
 .cards-container{
@@ -32,4 +33,8 @@ img{
 }
 .cards-container> *:nth-child(6){
     grid-area: g23;
+}
+.no-image img{
+    opacity: 0;
+    pointer-events: none;
 }
