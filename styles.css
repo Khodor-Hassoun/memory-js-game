@@ -1,6 +1,9 @@
 .card{
     background-color: aqua;
 }
+img{
+    width: 100%;
+}
 
 .cards-container{
     display: grid;
