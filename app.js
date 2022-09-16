@@ -1,7 +1,8 @@
 const cards = document.querySelectorAll('.card')
-
+const result = document.querySelector('.result')
 let image = document.createElement('img')
 let firstCard = ''
+let wincounter = 0;
 for(let card of cards){
     let image = document.createElement('img')
     image.setAttribute('src',`./assets/${Math.floor(Math.random() * 3)+1}.png`)
@@ -25,7 +26,16 @@ for(let card of cards){
             firstCard = card.childNodes[1].src
         }
         else{
+            wincounter++
             console.log('Almost there')
+            result.innerHTML=`${wincounter}`
+            for(let card of cards){
+                card.removeChild(card.childNodes[1])
+                let image = document.createElement('img')
+                image.setAttribute('src',`./assets/${Math.floor(Math.random() * 3)+1}.png`)
+                card.append(image)
+            }
+
         }
 
     })
